@@ -1,38 +1,436 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=MonteCarlo&display=swap');
+
+*{
+  box-sizing: border-box;
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container{
+  width: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-family: 'Dancing Script', cursive;
+  background-image: url('./images/i.jpg');
+  background-size: cover;
+  background-blend-mode: lighten;
+  background-color: rgb(116, 13, 116);
+  animation-name: backgroundChange;
+  animation-timing-function: ease;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes backgroundChange {
+  0%{
+    background-color: rgb(107, 5, 107);
+  }
+  25%{
+    background-color: rgb(5, 15, 107);
+  }
+  50%{
+    background-color: rgb(14, 78, 20);
+  }
+  75%{
+    background-color: rgb(102, 96, 14);
+  }
+  100%{
+    background-color: rgb(105, 20, 20);
+  }
+}
+
+#title{
+  width: 25vmax;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 700;
+  color: rgb(255, 255, 255);
+  margin-bottom: 20px;
+  background-color: rgba(17, 90, 224, 0.726);
+}
+
+.login-container{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container input,.container button{
+  width: 25vmax;
+  padding: 15px 10px;
+  font-size: 16px;
+  outline: none;
+  font-weight: 300;
+  margin-bottom: 20px;
+  border: none;
+}
+
+.container button{
+  background-color: crimson;
+  cursor: pointer;
+  transition: all 0.3s;
+  color: white;
+  font-weight: 500;
+}
+
+#login-btn{
+  background-color: crimson;
+}
+
+#register-btn{
+  background-color: rgb(10, 163, 26);
+}
+
+#login-btn:hover{
+  background-color: rgb(185, 5, 41);
+}
+
+#register-btn:hover{
+  background-color: rgb(10, 143, 5);
+}
+
+.registerPageContainer{
+  background-image: url('./images/23williamson.jpg');
+}
+
+.topbar{
+  background: rgb(80, 25, 15);
+  padding: 10px 2%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.topbar>p{
+  color: white;
+  font-size: 24px;
+  font-weight: 500;
+  font-family: cursive;
+}
+.topbar button{
+  background-image: linear-gradient( to left, rgb(89, 248, 26),rgb(58, 189, 7));
+  padding: 4px 16px;
+  color: #444;
+  font-weight: bold;
+  font-size: 16px;
+  border: none;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s;
+}
+
+.topbar button:hover{
+  transform: scale(1.02,1.02);
+}
+
+.main-container{
+  background: #bbb;
+  width: 100%;
+  padding-bottom: 50px;
+}
+
+.teams-card-container{
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.team-cards{
+  width: 27%;
+  margin: 20px;
+  height: 300px;
+  padding: 10px;
+  position: relative;
+  background: white;
+}
+.team-cards img{
+  width: 100%;
+  height: 100%;
+}
+
+.team-name{
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: chocolate;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+  z-index: 10;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.team-name-container{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba( 0, 0, 0, 0.3);
+  display: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.team-cards:hover .team-name-container{
+  display: flex;
+}
+
+.MI{
+  background: #004484;
+  color: white;
+}
+.CSK{
+  background: rgb(230, 230, 47);
+  color: #039ADE;
+}
+.RR{
+  background: #254AA5;
+  color: #CBA92B;
+}
+.RCB{
+  background: #D5142E;
+  color: white;
+}
+.KKR{
+  background: #3A225D;
+  color: #F2C028;
+}
+.DD{
+  background: #214D96;
+  color: white;
+}
+.PK{
+  background: #EB1819;
+  color: white;
+}
+.SHR{
+  background:#B02528;
+  color: #F7A31B;
+}
+
+.team{
+  background: rgb(216, 212, 212);
+}
+
+.team-detail{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2% 4%;
+}
+.team-detail>div{
+  width: 40%;
+}
+.team-logo{
+  height: 500px;
+}
+.team-logo>img{
+  width: 100%;
+  height: 100%;
+}
+.players-wrapper{
+  padding: 2% 6%;
+  margin: 0 auto;
+}
+
+.heading{
+  margin-top: 50px;
+  margin-bottom: 20px;
+  font-weight: 400;
+  font-size: 36px;
+}
+
+.team-players-container{
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.players-card{
+  width: 18%;
+  margin: 10px;
+  height: 350px;
+  border-radius: 6px;
+  position: relative;
+  background: White;
+  box-shadow: 2px 4px 6px #eee;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.players-card:hover{
+  transform: scale(1.02,1.02);
+  box-shadow: 4px 6px 4px #eee;
+}
+
+.players-card>img{
+  width: 100%;
+  height: 100%;
+}
+
+.player-details{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px 20px;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.details>p{
+  margin: 20px 0;
+  font-weight: bold;
+}
+.details>h3{
+  font-weight: 500;
+}
+
+.name{
+  margin-left: 10px;
+  font-weight: 400;
+}
+.name::after{
+  content: ",";
+}
+
+.name:last-of-type::after{
+  content: ".";
+}
+
+.player-detail-wrapper{
+  padding: 2% 4%;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 8px;
+  height: 60vh;
+  box-shadow: 4px 8px 8px #ccc;
+  margin-bottom: 50px;
+}
+
+.player-detail-wrapper>div{
+  width: 45%;
+}
+
+.player-image{
+  width: 60%;
+}
+.player-detail h3{
+  font-weight: 24px;
+  margin: 20px 0;
+}
+.player-detail h3>span,.player-detail h2>span{
+  font-weight: 500;
+}
+.player-name{
+  font-size: 40px;
+  text-transform: capitalize;
+}
+
+.form-container{
+  padding: 2% 6%;
+  background-color: #ddd;
+}
+
+.form{
+  width: 600px;
+  background-color: white;
+  margin: auto; 
+  padding: 4% 2%;
+  border-radius: 8px;
+  box-shadow: 2px 6px 6px #888;
+}
+.input-wrapper{
+ display: flex;
+ align-items: flex-start;
+ justify-content: flex-end;
+ font-weight: 600;
+ margin-bottom: 20px;
+}
+
+.input-wrapper>input{
+  margin-right: 100px;
+  margin-left: 20px;
+  width: 55%;
+  outline: none;
+  border-radius: 4px;
+  border: 1px solid #bbb;
+  padding: 4px 10px;
+}
+
+.radio-wrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 55%;
+  margin-right: 100px;
+  margin-left: 20px;
+  flex-wrap: wrap;
+}
+.radio-wrapper>label{
+  width: 50%;
+}
+.submit-btn-wrapper{
+  text-align: center;
+  margin-top: 30px;
+}
+
+.submit-btn-wrapper>input{
+  outline: none;
+  color: white;
+  border: none;
+  background-color: rgb(31, 31, 194);
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-size: 16px;
+}
+
+.footer{
+  background-color: rgb(54, 50, 45);
+  padding: 4% 8%;
+  color: white;
+}
+
+.footer-items{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.app-name{
+  width: 25%;
+}
+.app-name>p{
+  font-size: 28px;
+}
+
+.team-links{
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.team-links>a{
+  width: 50%;
+  color: white;
+  text-decoration: none;
 }
