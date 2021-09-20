@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getPlayers, getTeams } from '../../APIs';
 import { Link } from 'react-router-dom';
+import Footer from '../footer';
 
 const TeamDetail = () => {
     const search = useParams();
@@ -65,6 +66,7 @@ const TeamDetail = () => {
                 </div>
             </div>          
         </div>
+        <Footer />
     </div> );
 }
 export default TeamDetail;

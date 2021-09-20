@@ -6,7 +6,6 @@ import Register from './Components/register';
 import TeamDetail from './Components/detail';
 import PlayerDetail from './Components/player';
 import AddPlayer from './Components/addPlayer';
-import Footer from './Components/footer';
 
 function App() {
   return (
@@ -20,7 +19,6 @@ function App() {
           <Route path='/playerPage/:id' component={PlayerDetail} />
           <Route path='/addPlayer' component={AddPlayer} />
         </Switch>
-      <Footer />
       </BrowserRouter>
     </div>
   );

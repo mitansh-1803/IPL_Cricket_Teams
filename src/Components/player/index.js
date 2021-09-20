@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { getPlayer } from '../../APIs';
+import Footer from '../footer';
 
 const PlayerDetail = () => {
 
@@ -28,6 +29,7 @@ const PlayerDetail = () => {
                 <h3>Status: <span>{player.isPlaying? "Playing": "On Bench"}</span></h3>
             </div>
         </div>
+        <Footer />
     </div> );
 }
  

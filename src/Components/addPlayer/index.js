@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { addPlayer, getPlayers } from '../../APIs';
+import Footer from '../footer';
 
 const AddPlayer = () => {
 
@@ -116,6 +117,7 @@ const AddPlayer = () => {
                 </div>
             </form>
         </div>
+        <Footer />
     </div> );
 }
  

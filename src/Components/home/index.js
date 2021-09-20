@@ -2,11 +2,17 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { getTeams } from '../../APIs';
 import Topbar from '../topbar';
-import { Link } from 'react-router-dom';
+import { Link , Redirect } from 'react-router-dom';
+import Footer from '../footer';
 
 const Home = () => {
 
     const [teams, setTeams] = useState([]);
+    const [logout, setLogout] = useState(false);
+
+    const logoutPage = () => {
+        setLogout(true);
+    }
 
     useEffect(() => {
         axios.get(getTeams)
@@ -14,12 +20,16 @@ const Home = () => {
         .catch(err => console.log(err))
     }, [])
 
-    return ( <div className='main-container'>
-        <Topbar name={"IPL Cricket Teams"} />
-        <div className='teams-card-container' >
-            {teams?.map(item => <TeamsCard team={item} />)}
+    return (<>
+        {logout && <Redirect />}
+        <div className='main-container'>
+            <Topbar name={"IPL Cricket Teams"} logoutPage={logoutPage} />
+            <div className='teams-card-container' >
+                {teams?.map(item => <TeamsCard team={item} />)}
+            </div>
         </div>
-    </div> );
+        <Footer />
+    </> );
 }
  
 export default Home;
